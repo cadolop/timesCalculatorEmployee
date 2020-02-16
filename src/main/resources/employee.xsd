@@ -1,0 +1,42 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+	targetNamespace="http://spring.io/guides/gs-producing-web-service"
+	elementFormDefault="qualified">
+
+	<xs:element name="saveEmployeeRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="firstName" type="xs:string" />
+				<xs:element name="lastName" type="xs:string" />
+				<xs:element name="identificationType" type="xs:string" />
+				<xs:element name="identification" type="xs:string" />
+				<xs:element name="birthDate" type="xs:string" />
+				<xs:element name="startDate" type="xs:string" />
+				<xs:element name="jobTitle" type="xs:string" />
+				<xs:element name="salary" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="saveEmployeeResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="employeeType" type="tns:employeeType" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="employeeType">
+		<xs:sequence>
+			<xs:element name="id" type="xs:long" />
+			<xs:element name="firstName" type="xs:string" />
+			<xs:element name="lastName" type="xs:string" />
+			<xs:element name="identificationType" type="xs:string" />
+			<xs:element name="identification" type="xs:string" />
+			<xs:element name="birthDate" type="xs:date" />
+			<xs:element name="startDate" type="xs:date" />
+			<xs:element name="jobTitle" type="xs:string" />
+			<xs:element name="salary" type="xs:double" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

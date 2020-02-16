@@ -1,0 +1,12 @@
+com.cadolop.timescalculatoremployee
+com.cadolop.timescalculatoremployee.configuration
+com.cadolop.timescalculatoremployee.dto
+com.cadolop.timescalculatoremployee.model
+com.cadolop.timescalculatoremployee.repository
+com.cadolop.timescalculatoremployee.rest
+com.cadolop.timescalculatoremployee.service
+com.cadolop.timescalculatoremployee.service.impl
+com.cadolop.timescalculatoremployee.soap
+com.cadolop.timescalculatoremployee.soapclient
+com.cadolop.timescalculatoremployee.util
+io.spring.guides.gs_producing_web_service
