@@ -4,7 +4,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 /**
- * The class to
+ * The class to Servlet Initializer
  *
  * @author Carlos Adolfo Lopez R
  * @version 1.0
@@ -13,10 +13,10 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 public class ServletInitializer extends SpringBootServletInitializer {
 
 	/**
-	 * This is the main method
+	 * This is method to configure the Servlet initializer 
 	 * 
-	 * @param application Unused.
-	 * @return Nothing.
+	 * @param application to return the sources.
+	 * @return the application builder.
 	 */
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {

@@ -15,7 +15,7 @@ import com.cadolop.timescalculatoremployee.dto.EmployeeDto;
 import com.cadolop.timescalculatoremployee.service.EmployeeService;
 
 /**
- * The class to
+ * The class rest controller employee
  *
  * @author Carlos Adolfo Lopez R
  * @version 1.0
@@ -29,10 +29,10 @@ public class CalculatorController {
 	EmployeeService employeeService;
 	
 	/**
-	 * This is the main method
+	 * This method define the endpoint of the rest controller
 	 * 
-	 * @param args Unused.
-	 * @return Nothing.
+	 * @param employeeDto the data transfer object front level.
+	 * @return the response entity with the dates calculate in year, month and days.
 	 */
 	@RequestMapping({ "/calculate" })
 	public ResponseEntity<Object> calculate(@RequestBody EmployeeDto employeeDto) {

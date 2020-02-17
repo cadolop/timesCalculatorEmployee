@@ -9,7 +9,7 @@ import io.spring.guides.gs_producing_web_service.EmployeeType;
 import io.spring.guides.gs_producing_web_service.SaveEmployeeRequest;
 
 /**
- * The class to
+ * The interface of employee service
  *
  * @author Carlos Adolfo Lopez R
  * @version 1.0
@@ -18,58 +18,58 @@ import io.spring.guides.gs_producing_web_service.SaveEmployeeRequest;
 public interface EmployeeService {
 
 	/**
-	 * This is the main method
+	 * This is the validator method of DTO
 	 * 
-	 * @param args Unused.
-	 * @return Nothing.
+	 * @param employeeDto data transfered of front to validate.
+	 * @return the list of validation messages.
 	 */
 	public List<String> validator(EmployeeDto employeeDto);
 
 	/**
-	 * This is the main method
+	 * This is the calculate method of days since start job and birth date
 	 * 
-	 * @param args Unused.
-	 * @return Nothing.
+	 * @param employee with the data model.
+	 * @return list of messages with the days since start job and birth date.
 	 */
 	public List<String> calculate(Employee employee);
 
 	/**
-	 * This is the main method
+	 * This method is to convert employee request soap to model 
 	 * 
-	 * @param args Unused.
-	 * @return Nothing.
+	 * @param employeeReq the request soap.
+	 * @return the employee model.
 	 */
 	public Employee convertEmployeeReqToModel(SaveEmployeeRequest employeeReq);
 
 	/**
-	 * This is the main method
+	 * This method is to convert employee model to employee type soap
 	 * 
-	 * @param args Unused.
-	 * @return Nothing.
+	 * @param employee to convert to employee type soap.
+	 * @return the employee type soap.
 	 */
 	public EmployeeType convertEmployeeModelToEmployeeType(Employee employee);
 
 	/**
-	 * This is the main method
+	 * This method is to convert employee type soap to model
 	 * 
-	 * @param args Unused.
-	 * @return Nothing.
+	 * @param employeeType soap to convert to employee.
+	 * @return the employee model.
 	 */
-	public Employee convertEmployeeEmployeeTypeToModel(EmployeeType employeeType);
+	public Employee convertEmployeeTypeToModel(EmployeeType employeeType);
 
 	/**
-	 * This is the main method
+	 * This method is call soap client to save employee in database
 	 * 
-	 * @param args Unused.
-	 * @return Nothing.
+	 * @param employeeDto to send request soap.
+	 * @return the employee saved in data base.
 	 */
 	public Employee callSoapEmployee(EmployeeDto employeeDto);
 
 	/**
-	 * This is the main method
+	 * This method to save employee repository in database  
 	 * 
-	 * @param args Unused.
-	 * @return Nothing.
+	 * @param employee data to save in database.
+	 * @return the employee saved.
 	 */
 	public Employee saveEmployee(Employee employee);
 }

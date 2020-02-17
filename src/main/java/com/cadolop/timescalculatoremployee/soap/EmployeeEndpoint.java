@@ -13,7 +13,7 @@ import io.spring.guides.gs_producing_web_service.SaveEmployeeRequest;
 import io.spring.guides.gs_producing_web_service.SaveEmployeeResponse;
 
 /**
- * The class to
+ * The class to configure endpoint employee soap
  *
  * @author Carlos Adolfo Lopez R
  * @version 1.0
@@ -27,10 +27,10 @@ public class EmployeeEndpoint {
 	EmployeeService employeeService;
 	
 	/**
-	 * This is the main method
+	 * This method configure the endpoint employee soap
 	 * 
-	 * @param args Unused.
-	 * @return Nothing.
+	 * @param request data to save in database.
+	 * @return the response with the employee saved.
 	 */
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "saveEmployeeRequest")
 	@ResponsePayload

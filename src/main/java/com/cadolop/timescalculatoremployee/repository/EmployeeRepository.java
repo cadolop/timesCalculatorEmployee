@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.cadolop.timescalculatoremployee.model.Employee;
 
 /**
- * The class to
+ * The interface repository employee JPA
  *
  * @author Carlos Adolfo Lopez R
  * @version 1.0

@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * The class to
+ * The class model of employee
  *
  * @author Carlos Adolfo Lopez R
  * @version 1.0

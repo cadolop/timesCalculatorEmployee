@@ -14,7 +14,7 @@ import io.spring.guides.gs_producing_web_service.SaveEmployeeRequest;
 import io.spring.guides.gs_producing_web_service.SaveEmployeeResponse;
 
 /**
- * The class to
+ * The class to request client soap
  *
  * @author Carlos Adolfo Lopez R
  * @version 1.0
@@ -25,10 +25,10 @@ public class EmployeeClient extends WebServiceGatewaySupport {
 	EmployeeService employeeService;
 
 	/**
-	 * This is the main method
+	 * This method call the endpoint employee soap
 	 * 
-	 * @param args Unused.
-	 * @return Nothing.
+	 * @param employeeDto the data to save in database.
+	 * @return the employee saved in database.
 	 */
 	public Employee callSoapEmployee(EmployeeDto employeeDto) {
 		SaveEmployeeRequest request = new SaveEmployeeRequest();
@@ -37,6 +37,6 @@ public class EmployeeClient extends WebServiceGatewaySupport {
 	        .marshalSendAndReceive("http://localhost:18080/calculator-svc/ws", request,
 	            new SoapActionCallback("http://spring.io/guides/gs-producing-web-service/SaveEmployeeRequest"));
 	    EmployeeType employeeType = response.getEmployeeType();
-		return employeeService.convertEmployeeEmployeeTypeToModel(employeeType);
+		return employeeService.convertEmployeeTypeToModel(employeeType);
 	}
 }

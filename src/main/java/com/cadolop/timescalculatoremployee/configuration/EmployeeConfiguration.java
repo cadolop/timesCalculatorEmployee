@@ -7,7 +7,7 @@ import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import com.cadolop.timescalculatoremployee.soapclient.EmployeeClient;
 
 /**
- * The class to
+ * The class to configure the soap client employee
  *
  * @author Carlos Adolfo Lopez R
  * @version 1.0
@@ -17,10 +17,9 @@ import com.cadolop.timescalculatoremployee.soapclient.EmployeeClient;
 public class EmployeeConfiguration {
 
 	/**
-	 * This is the main method
+	 * This method set the marshaller context
 	 * 
-	 * @param application Unused.
-	 * @return Nothing.
+	 * @return the marshaller of the context.
 	 */
 	@Bean
 	public Jaxb2Marshaller marshaller() {
@@ -30,10 +29,10 @@ public class EmployeeConfiguration {
 	}
 
 	/**
-	 * This is the main method
+	 * This method setup the employee client soap
 	 * 
-	 * @param application Unused.
-	 * @return Nothing.
+	 * @param marshaller to configure the client soap.
+	 * @return the employee client soap.
 	 */
 	@Bean
 	public EmployeeClient employeeClient(Jaxb2Marshaller marshaller) {

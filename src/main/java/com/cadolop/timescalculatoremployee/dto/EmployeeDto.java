@@ -6,7 +6,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 /**
- * The class to
+ * The class define the data transfer object of employee front level
  *
  * @author Carlos Adolfo Lopez R
  * @version 1.0

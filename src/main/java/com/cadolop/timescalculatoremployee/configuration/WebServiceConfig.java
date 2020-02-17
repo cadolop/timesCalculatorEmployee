@@ -13,7 +13,7 @@ import org.springframework.xml.xsd.SimpleXsdSchema;
 import org.springframework.xml.xsd.XsdSchema;
 
 /**
- * The class to
+ * The class to configure de soap web service
  *
  * @author Carlos Adolfo Lopez R
  * @version 1.0
@@ -24,10 +24,10 @@ import org.springframework.xml.xsd.XsdSchema;
 public class WebServiceConfig extends WsConfigurerAdapter {
 
 	/**
-	 * This is the main method
+	 * This method configure the message dispatcher
 	 * 
-	 * @param application Unused.
-	 * @return Nothing.
+	 * @param applicationContext to return the bean registered.
+	 * @return the servelet register bean.
 	 */
 	@Bean
 	public ServletRegistrationBean<MessageDispatcherServlet> messageDispatcherServlet(ApplicationContext applicationContext) {
@@ -38,10 +38,10 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 	}
 
 	/**
-	 * This is the main method
+	 * This is the wsdl method definition
 	 * 
-	 * @param application Unused.
-	 * @return Nothing.
+	 * @param employeeSchema to setup the endpoint.
+	 * @return the wsdl definition.
 	 */
 	@Bean(name = "employee")
 	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema employeeSchema) {
@@ -54,10 +54,9 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 	}
 
 	/**
-	 * This is the main method
+	 * This method return de Xsd Shema
 	 * 
-	 * @param application Unused.
-	 * @return Nothing.
+	 * @return the Xsd Shemea of employee.
 	 */
 	@Bean
 	public XsdSchema employeeSchema() {

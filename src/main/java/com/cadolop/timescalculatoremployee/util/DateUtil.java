@@ -7,7 +7,7 @@ import java.time.ZoneId;
 import java.util.Date;
 
 /**
- * The class to
+ * The util class date format
  *
  * @author Carlos Adolfo Lopez R
  * @version 1.0
@@ -16,10 +16,10 @@ import java.util.Date;
 public class DateUtil {
 
 	/**
-	 * This is the main method
+	 * This method convert a string date to date
 	 * 
-	 * @param args Unused.
-	 * @return Nothing.
+	 * @param sDate the string date format dd/MM/yyyy or dd-MM-yyyy or dd.MM.yyy.
+	 * @return the date.
 	 */
 	public static Date converStringToDate(String sDate) {
 		Date date = null;
@@ -40,10 +40,10 @@ public class DateUtil {
 	}
 	
 	/**
-	 * This is the main method
+	 * This method convert date to local date class
 	 * 
-	 * @param args Unused.
-	 * @return Nothing.
+	 * @param date the date to convert.
+	 * @return the date in local date class.
 	 */
 	public static LocalDate convertDateToLocalDate(Date date) {
 		return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
