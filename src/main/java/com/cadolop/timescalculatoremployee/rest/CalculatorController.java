@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cadolop.timescalculatoremployee.dto.EmployeeDto;
+import com.cadolop.timescalculatoremployee.model.Employee;
 import com.cadolop.timescalculatoremployee.service.EmployeeService;
 
 /**
@@ -40,7 +41,18 @@ public class CalculatorController {
 			List<String> messages = employeeService.validator(employeeDto);
 			if (messages.size() > 0)
 				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(messages);
-			return ResponseEntity.ok(employeeService.calculate(employeeService.callSoapEmployee(employeeDto)));
+			Employee employee;
+			try {
+				employee = employeeService.callSoapEmployee(employeeDto);
+				if (employee != null && employee.getId() > 0L)
+					messages.add("Saved id " + employee.getId());
+				else
+					messages.add("Not saved");
+			} catch (Exception e) {
+				messages.add("Not saved");
+			}
+			messages.addAll(employeeService.calculate(employeeDto));
+			return ResponseEntity.ok(messages);
 		} catch (Exception e) {
 			LOG.log(Level.SEVERE, e.getMessage(), e);
 			throw e;

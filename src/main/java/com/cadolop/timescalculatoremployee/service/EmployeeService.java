@@ -28,10 +28,10 @@ public interface EmployeeService {
 	/**
 	 * This is the calculate method of days since start job and birth date
 	 * 
-	 * @param employee with the data model.
+	 * @param employeeDto with the data model.
 	 * @return list of messages with the days since start job and birth date.
 	 */
-	public List<String> calculate(Employee employee);
+	public List<String> calculate(EmployeeDto employeeDto);
 
 	/**
 	 * This method is to convert employee request soap to model 

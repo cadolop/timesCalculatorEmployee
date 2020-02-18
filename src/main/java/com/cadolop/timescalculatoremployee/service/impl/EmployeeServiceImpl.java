@@ -87,10 +87,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 	 * @return list of messages with the days since start job and birth date.
 	 */
 	@Override
-	public List<String> calculate(Employee employee) {
+	public List<String> calculate(EmployeeDto employeeDto) {
 		List<String> messages = new ArrayList<>();
-		Period agePeriod = Period.between(DateUtil.convertDateToLocalDate(employee.getBirthDate()), LocalDate.now());
-		Period startJobPeriod = Period.between(DateUtil.convertDateToLocalDate(employee.getStartDate()), LocalDate.now());
+		Period agePeriod = Period.between(DateUtil.convertDateToLocalDate(DateUtil.converStringToDate(employeeDto.getBirthDate())), LocalDate.now());
+		Period startJobPeriod = Period.between(DateUtil.convertDateToLocalDate(DateUtil.converStringToDate(employeeDto.getStartDate())), LocalDate.now());
 		messages.add("Age Period = " + agePeriod.getYears() + "," + agePeriod.getMonths() + "," + agePeriod.getDays());
 		messages.add("Start Job Period = " + startJobPeriod.getYears() + "," + startJobPeriod.getMonths() + "," + startJobPeriod.getDays());
 		return messages;		
